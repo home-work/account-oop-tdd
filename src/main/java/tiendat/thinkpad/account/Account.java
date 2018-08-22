@@ -1,5 +1,7 @@
 package tiendat.thinkpad.account;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Account {
@@ -53,8 +55,15 @@ public class Account {
         return dateCreated;
     }
 
-    public void setDateCreated(Date dateCreated) {
-        this.dateCreated = dateCreated;
+    public void setDateCreated(String date) {
+        Date result = null;
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            result = dateFormat.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        this.dateCreated = result;
     }
 
     //    trả về tỉ lệ lãi xuất gửi theo tháng
