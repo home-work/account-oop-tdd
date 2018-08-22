@@ -10,15 +10,25 @@ public class AccountTest {
         Account account = new Account(1122, 20000);
         account.setAnnualInterestRate(4.5);
         double expect = 17500;
-        double actual=account.withdraw(2500);
+        double actual = account.withdraw(2500);
         assertEquals(expect, actual);
     }
+
     @Test
     public void testDepositAccount() {
         Account account = new Account(1122, 20000);
         account.setAnnualInterestRate(4.5);
         double expect = 23000;
-        double actual=account.deposit(3000);
+        double actual = account.deposit(3000);
+        assertEquals(expect, actual);
+    }
+
+    @Test
+    public void testDisplayBalanceOfAccount() {
+        Account account = new Account(1122, 20000);
+        account.setAnnualInterestRate(4.5);
+        double expect = 20000;
+        double actual = account.getBalance();
         assertEquals(expect, actual);
     }
 }
