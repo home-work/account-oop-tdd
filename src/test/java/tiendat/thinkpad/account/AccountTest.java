@@ -31,4 +31,13 @@ public class AccountTest {
         double actual = account.getBalance();
         assertEquals(expect, actual);
     }
+
+    @Test
+    public void testDisplayMonthlyInterestOfAccount() {
+        Account account = new Account(1122, 20000);
+        account.setAnnualInterestRate(4.5);
+        double expect = 75;
+        double actual = account.getMonthlyInterest();
+        assertEquals(expect, actual);
+    }
 }
